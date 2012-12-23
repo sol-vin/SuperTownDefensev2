@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Menu>
+  <BGImage Type="Image">
+    <Body>
+      <Position>
+        <X>0</X>
+        <Y>0</Y>
+      </Position>
+      <Angle>0</Angle>
+    </Body>
+    <ImageRender>
+      <Texture>menu/background</Texture>
+      <Scale>
+        <X>6</X>
+        <Y>6</Y>
+      </Scale>
+      <Layer>0</Layer>
+    </ImageRender>
+  </BGImage>
+  <StartText Type="Text">
+    <TextRender>
+      <Text>Press Start or Enter</Text>
+      <Font>font</Font>
+      <Color>
+        <R>255</R>
+        <B>255</B>
+        <G>255</G>
+        <A>255</A>
+      </Color>
+      <Layer>1</Layer>
+    </TextRender>
+  </StartText>
+</Menu>
