@@ -1,5 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <GameState>
+  <!-- GUI -->
   <BGImage Type="Image">
     <Body>
       <Position>
@@ -22,6 +23,47 @@
       </Scale>
     </ImageRender>
   </BGImage>
+
+  <ScoreText>
+    <TextRender>
+      <Font>font</Font>
+      <Color>
+        <R>255</R>
+        <G>255</G>
+        <B>255</B>
+        <A>255</A>
+      </Color>
+      <Layer>1</Layer>
+    </TextRender>
+  </ScoreText>
+  
+  <HealthText>
+    <TextRender>
+      <Font>font</Font>
+      <Color>
+        <R>255</R>
+        <G>0</G>
+        <B>0</B>
+        <A>255</A>
+      </Color>
+      <Layer>1</Layer>
+    </TextRender>
+  </HealthText>
+  
+  <DifficultyText>
+    <TextRender>
+      <Font>font</Font>
+      <Color>
+        <R>100</R>
+        <G>100</G>
+        <B>200</B>
+        <A>255</A>
+      </Color>
+      <Layer>1</Layer>
+    </TextRender>
+  </DifficultyText>
+
+  <!-- Game Entities-->
 
   <Town>
     <Body>
@@ -57,7 +99,10 @@
       <Default>false</Default>
       <Texture>game/deadcity</Texture>
       <Layer>.9</Layer>
-      <Scale>6</Scale>
+      <Scale>
+        <X>6</X>
+        <Y>6</Y>
+      </Scale>
       <TileSize>
         <X>20</X>
         <Y>15</Y>
@@ -107,7 +152,7 @@
       <RapidfireMilliseconds>1250</RapidfireMilliseconds>
     </FireKey>
   </Town>
-
+  
   <Bomb>
     <Gravity>.1</Gravity>
     <Damage>1</Damage>
@@ -118,7 +163,7 @@
         <Width>5</Width>
         <Height>5</Height>
       </Bounds>
-      <Debug>true</Debug>
+      <Debug>false</Debug>
       <DebugColor>
         <R>255</R>
         <B>0</B>
@@ -157,5 +202,144 @@
       <SoundEffect>game/sounds/explode</SoundEffect>
       <Volume>.5</Volume>
     </ExplodeSound>
+    <ExplosionEmitter>
+      <Texture>game/explosionparticle</Texture>
+      <TileSize>
+        <X>5</X>
+        <Y>5</Y>
+      </TileSize>
+    </ExplosionEmitter>
+    <SmokeEmitter>
+      <Texture>game/explosionparticle</Texture>
+      <TileSize>
+        <X>5</X>
+        <Y>5</Y>
+      </TileSize>
+    </SmokeEmitter>
   </Bomb>
+
+  <EnemySpawner>
+    <SoldierTimer>
+      <Millisconds>5000</Millisconds>
+      <StartAfterCreation>true</StartAfterCreation>
+    </SoldierTimer>
+    <HelicopterTimer>
+      <Millisconds>10000</Millisconds>
+      <StartAfterCreation>true</StartAfterCreation>
+    </HelicopterTimer>
+    <SoldierMaxTime>10000</SoldierMaxTime>
+    <HelicopterMaxTime>20000</HelicopterMaxTime>
+    <SoldierMinTime>500</SoldierMinTime>
+    <HelicopterMinTime>200</HelicopterMinTime>
+    <DifficultyRise>.2</DifficultyRise>
+    <DifficultyStep>2</DifficultyStep>
+  </EnemySpawner>
+
+  <Soldier>
+    <Animation>
+      <Default>true</Default>
+      <StartAfterCreation>true</StartAfterCreation>
+      <Texture>game/soldier</Texture>
+      <TileSize>
+        <X>5</X>
+        <Y>10</Y>
+      </TileSize>
+      <FramesPerSecond>4</FramesPerSecond>
+      <FrameTimer>
+        <Milliseconds>250</Milliseconds>
+      </FrameTimer>
+      <Layer>.5</Layer>
+    </Animation>
+    <Collision>
+      <Bounds>
+        <X>0</X>
+        <Y>0</Y>
+        <Width>5</Width>
+        <Height>10</Height>
+      </Bounds>
+    </Collision>
+    <Health>
+      <HitPoints>1</HitPoints>
+    </Health>
+    <AttackTimer>
+      <Milliseconds>500</Milliseconds>
+    </AttackTimer>
+    <AttackSound>
+      <SoundEffect>game/sounds/soldierattack</SoundEffect>
+      <Volume>.3</Volume>
+    </AttackSound>
+    <HitSound>
+      <SoundEffect>game/sounds/soldierhit</SoundEffect>
+    </HitSound>
+    <GibEmitter>
+      <Texture>game/soldiergibs</Texture>
+      <TileSize>
+        <X>1</X>
+        <Y>1</Y>
+      </TileSize>
+      <Colors>
+        <Color1>
+          <R>204</R>
+          <G>41</G>
+          <B>41</B>
+          <A>255</A>
+        </Color1>
+        <Color2>
+          <R>237</R>
+          <G>107</G>
+          <B>107</B>
+          <A>255</A>
+        </Color2>
+        <Color3>
+          <R>255</R>
+          <G>0</G>
+          <B>0</B>
+          <A>255</A>
+        </Color3>
+        <Color4>
+          <R>255</R>
+          <G>100</G>
+          <B>100</B>
+          <A>255</A>
+        </Color4>
+      </Colors>
+      <MinTTL>50</MinTTL>
+      <MaxTTL>80</MaxTTL>
+    </GibEmitter>
+    <Speed>.25</Speed>
+    <Points>10</Points>
+  </Soldier>
+
+  <Helicopter>
+    <Animation>
+      <Default>true</Default>
+      <StartAfterCreation>true</StartAfterCreation>
+      <Texture>game/helicopter</Texture>
+      <TileSize>
+        <X>20</X>
+        <Y>16</Y>
+      </TileSize>
+      <FramesPerSecond>30</FramesPerSecond>
+      <FrameTimer>
+        <Milliseconds>33</Milliseconds>
+      </FrameTimer>
+      <Layer>.5</Layer>
+    </Animation>
+    <Health>
+      <HitPoints>1</HitPoints>
+    </Health>
+    <Collision>
+      <Bounds>
+        <X>0</X>
+        <Y>0</Y>
+        <Width>20</Width>
+        <Height>16</Height>
+      </Bounds>
+    </Collision>
+    <HitSound>
+      <SoundEffect>game/sounds/soldierhit</SoundEffect>
+    </HitSound>
+    <Speed>.35</Speed>
+    <Points>50</Points>
+  </Helicopter>
 </GameState>

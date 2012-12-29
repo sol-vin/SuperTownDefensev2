@@ -24,8 +24,6 @@ namespace SuperTownDefensev2.Objects
         private Sound _firebombsound;
 
         //Data
-        private int _rapidfire;
-
         private DoubleInput _firekey;
         private DoubleInput _debugkey;
 
@@ -79,6 +77,27 @@ namespace SuperTownDefensev2.Objects
         public override void Update()
         {
             base.Update();
+            if (Health.Alive)
+            {
+                switch ((int)Health.HitPoints)
+                {
+                    case 70:
+                        TileRender.Index = 1;
+                        break;
+                    case 30:
+                        TileRender.Index = 0;
+                        break;
+                }
+            }
+            if (Health.HitPoints <= 0 && !DeadCityAnim.Active)
+            {
+                DeadCityAnim.Active = true;
+                DeadCityAnim.Default = true;
+                DeadCityAnim.Start();
+                TileRender.Active = false;
+                TileRender.Default = false;
+                Cursor.Destroy();
+            }
             if (Cursor.CanFire && _firekey.RapidFire() && Health.Alive)
             {
                 Gun.Fire(Body.Position, Cursor.RotationAngle, TileRender.Origin, TileRender.Scale.X);

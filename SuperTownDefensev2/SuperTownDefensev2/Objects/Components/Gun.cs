@@ -8,7 +8,6 @@ namespace SuperTownDefensev2.Objects.Components
     {
         public float Thrust;
         private float _correctionangle;
-        public int LastID { get; private set; }
 
         private XmlParser _xp;
 
@@ -19,17 +18,12 @@ namespace SuperTownDefensev2.Objects.Components
 
         public void Fire(Vector2 position, float angle, Vector2 origin, float scale)
         {
-            Bomb b = new Bomb(Entity.StateRef, "Bomb" + GetID(), _xp);
+            Bomb b = new Bomb(Entity.StateRef, "Bomb", _xp);
             b.Collision.Partners = Entity.GetComponent<Targets>().List;
             b.Body.Position = position + origin * scale - b.ImageRender.Origin * b.ImageRender.Scale.X;
             b.Body.Angle = angle - angle*_correctionangle;
             b.Physics.Thrust(Thrust);
             Entity.AddEntity(b);
-        }
-
-        public int GetID()
-        {
-            return LastID++;
         }
 
         public override void ParseXml(XmlParser xp, string path)

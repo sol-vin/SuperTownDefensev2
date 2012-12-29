@@ -96,8 +96,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
-    <Compile Include="game\solider.png">
-      <Name>solider</Name>
+    <Compile Include="game\soldier.png">
+      <Name>soldier</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
@@ -124,6 +124,18 @@
   <ItemGroup>
     <Compile Include="game\sounds\firebomb.wav">
       <Name>firebomb</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="game\sounds\soldierattack.wav">
+      <Name>soldierattack</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+    </Compile>
+    <Compile Include="game\sounds\soldierhit.wav">
+      <Name>soldierhit</Name>
       <Importer>WavImporter</Importer>
       <Processor>SoundEffectProcessor</Processor>
     </Compile>

@@ -111,6 +111,10 @@
     <Compile Include="Objects\Components\Gun.cs" />
     <Compile Include="Objects\Components\Targets.cs" />
     <Compile Include="Objects\Cursor.cs" />
+    <Compile Include="Objects\Enemy.cs" />
+    <Compile Include="Objects\EnemySpawner.cs" />
+    <Compile Include="Objects\Helicopter.cs" />
+    <Compile Include="Objects\Soldier.cs" />
     <Compile Include="Objects\Town.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Program.cs" />
