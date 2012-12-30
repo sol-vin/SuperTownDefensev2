@@ -94,6 +94,7 @@ namespace SuperTownDefensev2.Objects
                     Collision.Bounds.Width = (int)_explodeanim.TileSize.X;
                     Collision.Bounds.Height = (int)_explodeanim.TileSize.Y;
                     _explosionemitter.Emit(20);
+                    _explodesound.Play();
                 }
             }
         }

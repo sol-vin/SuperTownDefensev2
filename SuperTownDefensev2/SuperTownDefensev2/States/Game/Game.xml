@@ -63,6 +63,9 @@
     </TextRender>
   </DifficultyText>
 
+  <!-- Game Data-->
+  
+  
   <!-- Game Entities-->
 
   <Town>
@@ -116,7 +119,7 @@
       <HitPoints>100</HitPoints>
     </Health>
     <Gun>
-      <Thrust>8.5</Thrust>
+      <Thrust>9</Thrust>
       <CorrectionAngle>.17</CorrectionAngle>
     </Gun>
     <FireBombSound>
@@ -145,7 +148,7 @@
         <A>255</A>
       </InactiveColor>
       <SafetyAngle>0.055</SafetyAngle>
-      <RotationSpeed>0.001</RotationSpeed>
+      <RotationSpeed>0.005</RotationSpeed>
       <QuickAimMultiplier>3</QuickAimMultiplier>
     </Cursor>
     <FireKey>
@@ -231,7 +234,7 @@
     <HelicopterMaxTime>20000</HelicopterMaxTime>
     <SoldierMinTime>500</SoldierMinTime>
     <HelicopterMinTime>200</HelicopterMinTime>
-    <DifficultyRise>.2</DifficultyRise>
+    <DifficultyRise>2</DifficultyRise>
     <DifficultyStep>2</DifficultyStep>
   </EnemySpawner>
 
@@ -336,6 +339,36 @@
         <Height>16</Height>
       </Bounds>
     </Collision>
+    <HitSound>
+      <SoundEffect>game/sounds/soldierhit</SoundEffect>
+    </HitSound>
+    <GibEmitter>
+      <Texture>game/explosionparticle</Texture>
+      <TileSize>
+        <X>5</X>
+        <Y>5</Y>
+      </TileSize>
+      <MinTTL>50</MinTTL>
+      <MaxTTL>80</MaxTTL>
+    </GibEmitter>
+    <ExplodeAnim>
+      <Active>false</Active>
+      <Default>false</Default>
+      <Texture>game/explosion</Texture>
+      <TileSize>
+        <X>16</X>
+        <Y>16</Y>
+      </TileSize>
+      <FramesPerSecond>30</FramesPerSecond>
+      <Scale>
+        <X>1</X>
+        <Y>1</Y>
+      </Scale>
+      <Layer>.2</Layer>
+      <FrameTimer>
+        <Milliseconds>33</Milliseconds>
+      </FrameTimer>
+    </ExplodeAnim>
     <HitSound>
       <SoundEffect>game/sounds/soldierhit</SoundEffect>
     </HitSound>

@@ -100,6 +100,7 @@ namespace SuperTownDefensev2.Objects
             }
             if (Cursor.CanFire && _firekey.RapidFire() && Health.Alive)
             {
+                _firebombsound.Play();
                 Gun.Fire(Body.Position, Cursor.RotationAngle, TileRender.Origin, TileRender.Scale.X);
             }
         }
